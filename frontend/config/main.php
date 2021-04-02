@@ -36,14 +36,20 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'sourceLanguage' => 'en_US',
+                ],
+            ]
+        ],
     ],
     'params' => $params,
 ];

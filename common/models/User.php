@@ -28,6 +28,12 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
 
+    const STATUS_MAP = [
+        self::STATUS_DELETED => 'Удалён',
+        self::STATUS_INACTIVE => 'Не активен',
+        self::STATUS_ACTIVE => 'Aктивен',
+
+    ];
 
     /**
      * {@inheritdoc}
@@ -43,7 +49,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::class,
         ];
     }
 

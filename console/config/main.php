@@ -17,9 +17,17 @@ return [
     ],
     'controllerMap' => [
         'fixture' => [
-            'class' => 'yii\console\controllers\FixtureController',
+            'class' => 'yii\faker\FixtureController',
             'namespace' => 'common\fixtures',
+            'templatePath' => '@tests/fixtures/data'
           ],
+        'migrate' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationPath' => [
+                '@console/migrations/',
+                '@yii/i18n/migrations/',
+            ]
+        ]
     ],
     'components' => [
         'log' => [
